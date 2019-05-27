@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PageHeaderComponent } from './page-header.component';
+import { PageHeaderModule } from './page-header.module';
 
 describe('PageHeaderComponent', () => {
   let component: PageHeaderComponent;
@@ -9,8 +10,7 @@ describe('PageHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
-      declarations: [ PageHeaderComponent ]
+      imports: [PageHeaderModule, RouterTestingModule],
     })
     .compileComponents();
   }));

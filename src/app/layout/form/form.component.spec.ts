@@ -1,23 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { PageHeaderModule } from './../../shared';
 import { FormComponent } from './form.component';
+import { FormModule } from './form.module';
 
 describe('FormComponent', () => {
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-    imports: [
-      RouterTestingModule,
-      PageHeaderModule,
-    ],
-      declarations: [ FormComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          FormModule,
+          BrowserAnimationsModule,
+          RouterTestingModule,
+         ],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FormComponent);

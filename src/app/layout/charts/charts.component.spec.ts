@@ -1,26 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ChartsModule as Ng2Charts } from 'ng2-charts';
-
-import { PageHeaderModule } from './../../shared';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChartsComponent } from './charts.component';
+import { ChartsModule } from './charts.module';
 
 describe('ChartsComponent', () => {
   let component: ChartsComponent;
   let fixture: ComponentFixture<ChartsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-    imports: [
-      RouterTestingModule,
-      Ng2Charts,
-      PageHeaderModule
-    ],
-      declarations: [ ChartsComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          ChartsModule,
+          RouterTestingModule,
+          BrowserAnimationsModule,
+        ],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ChartsComponent);

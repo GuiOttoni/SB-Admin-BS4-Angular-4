@@ -1,31 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { PageHeaderModule } from './../../shared';
 import { TablesComponent } from './tables.component';
+import { TablesModule } from './tables.module';
 
 describe('TablesComponent', () => {
-  let component: TablesComponent;
-  let fixture: ComponentFixture<TablesComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-    imports: [
-      RouterTestingModule,
-      PageHeaderModule,
-    ],
-      declarations: [ TablesComponent ]
+      imports: [ TablesModule, RouterTestingModule ],
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TablesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   it('should create', () => {
+    const fixture = TestBed.createComponent(TablesComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

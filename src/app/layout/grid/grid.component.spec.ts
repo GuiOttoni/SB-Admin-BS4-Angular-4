@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { PageHeaderModule } from './../../shared';
 import { GridComponent } from './grid.component';
+import { GridModule } from './grid.module';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -10,11 +11,11 @@ describe('GridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-    imports: [
-      RouterTestingModule,
-      PageHeaderModule,
-    ],
-      declarations: [ GridComponent ]
+      imports: [
+        GridModule,
+        RouterTestingModule,
+        BrowserAnimationsModule,
+      ],
     })
     .compileComponents();
   }));

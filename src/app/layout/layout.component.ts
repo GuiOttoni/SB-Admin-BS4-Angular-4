@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-layout',
@@ -8,12 +7,13 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
 
-    constructor(public router: Router) { }
+    collapedSideBar: boolean;
 
-    ngOnInit() {
-        if (this.router.url === '/') {
-            this.router.navigate(['/dashboard']);
-        }
+    constructor() {}
+
+    ngOnInit() {}
+
+    receiveCollapsed($event) {
+        this.collapedSideBar = $event;
     }
-
 }
